@@ -1,5 +1,5 @@
 function Home() {
-    return <h1>Orion lave suas mãos! Não se esqueça!</h1>
+    return <h1>Orion lave suas mãos!</h1>
 }
 
-export default Homegit status
+export default Home
