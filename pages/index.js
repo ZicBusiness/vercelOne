@@ -1,4 +1,4 @@
-const HomePage = () => {
+function HomePage() {
     return (
       <header>
         <div style="background: linear-gradient(to right, violet, indigo,blue, green, yellow, orange, red); color: transparent; -webkit-background-clip: text; background-clip: text; font-size: 4.8em; padding: 10px; text-align: center;">-HARMONIQUE-</div>
