@@ -1,9 +1,8 @@
-
 const HomePage = () => {
     return (
       <>
-        <h1 style={{ Size: '4em' }}>-Harmonique-</h1>
-        <p>Bem-vindo ao meu projeto Next.js!</p>
+        <h1 style={{ fontSize: '6em' }}>-Harmonique-</h1>
+        <h2>Bem-vindo ao meu projeto Next.js!</h2>
       </>
     );
   };
