@@ -20,6 +20,12 @@ const HomePage = () => {
         <p>
           My name is <strong>Harmonique</strong> and I'll be your host!
         </p>
+        <br></br>
+        <h2>and now... Let´s Explore HTML in Next.Js!!!</h2>
+
+        <p>
+            Today is  <strong><date>03/02/204</date></strong>! and we´ve just landed here n Vercel! Now it´s Next.Js project!!
+        </p>
 
         <fieldset>
           <legend>Feedback Info</legend>
