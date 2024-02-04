@@ -24,7 +24,7 @@ const HomePage = () => {
         <h2>and now... Let´s Explore HTML in Next.Js!!!</h2>
 
         <p>
-            Today is  <strong><date>03/02/204</date></strong>! and we´ve just landed here n Vercel! Now it´s Next.Js project!!
+            Today is  <strong><date>03/02/204</date></strong>! And we´ve just landed here in Vercel! Now it´s Next.Js project!!
         </p>
 
         <fieldset>
@@ -40,6 +40,7 @@ const HomePage = () => {
           <br />
           <h2>Leave your comments here!</h2>
           <textarea id="comments" rows="10" cols="60"></textarea>
+          
          
         </fieldset>
 
