@@ -1,14 +1,34 @@
+import { useState, useEffect } from 'react'; // Importa o useState e useEffect
 import styles from '../styles/Home.module.css';
 
 const HomePage = () => {
+    const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
     return (
       <>
-        <h1 style={{ fontSize: '6em' }}>-Harmonique-</h1>
-        <h2>Bem-vindo ao meu projeto Next.js!</h2>
-
-        <header>
+      <header>
         <div className={styles.gradientText}>-HARMONIQUE-</div>
       </header>
+        
+        <h2>Bem-vindo ao projeto Next.js! Hoje é: {' '}
+        {currentTime.toLocaleString('pt-BR', {
+          day: 'numeric',
+          month: 'numeric',
+          year: 'numeric',
+          hour: 'numeric',
+          minute: 'numeric',
+          second: 'numeric',
+        })}</h2>
+
+        
 
       <main>
         <h1>Let's Explore HTML</h1>
