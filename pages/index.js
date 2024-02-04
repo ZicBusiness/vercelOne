@@ -22,7 +22,7 @@ const HomePage = () => {
         </p>
 
         <fieldset>
-          <legend className={styles.legendStyle}>Feedback Info</legend>
+          <legend>Feedback Info</legend>
 
           <h2>What's your name?</h2>
           <label htmlFor="name">Name:</label>
@@ -34,13 +34,12 @@ const HomePage = () => {
           <br />
           <h2>Leave your comments here!</h2>
           <textarea id="comments" rows="10" cols="60"></textarea>
-          <button onClick={submitForm}>Submit</button>
+         
         </fieldset>
 
-        <div id="commentsDisplay"></div>
       </main>
 
-      <footer></footer>
+     
       </>
     );
   };
