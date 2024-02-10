@@ -11,4 +11,17 @@
   .legendStyle {
     font-size: 2em;
   }
+
+/*Referente ao Home.module.js*/
+  #commentsDisplay {
+    margin-top: 20px;
+  }
+
+  .commentBlock {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
   
