@@ -12,6 +12,15 @@ const HomePage = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+const formattedTime = currentTime.toLocaleString('pt-BR', {
+  day: 'numeric',
+  month: 'numeric',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+});
+
     return (
       <>
       <header>
@@ -19,16 +28,7 @@ const HomePage = () => {
       </header>
         
         <h2>Bem-vindo ao projeto Next.js! Hoje é: {' '}
-        {currentTime.toLocaleString('pt-BR', {
-          day: 'numeric',
-          month: 'numeric',
-          year: 'numeric',
-          hour: 'numeric',
-          minute: 'numeric',
-          second: 'numeric',
-        })}</h2>
-
-        
+        {formattedTime}</h2>      
 
       <main>
         <h1>Let's Explore HTML</h1>
@@ -48,6 +48,7 @@ const HomePage = () => {
         </p>
 
         <fieldset>
+      
           <legend>Feedback Info</legend>
 
           <h2>What's your name?</h2>
@@ -61,9 +62,7 @@ const HomePage = () => {
           <h2>Leave your comments here!</h2>
           <textarea id="comments" rows="10" cols="60"></textarea>
           <button>-Submit-</button>
-      
-          
-         
+                        
         </fieldset>
 
       </main>
