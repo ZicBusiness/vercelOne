@@ -60,7 +60,8 @@ const HomePage = () => {
           <br />
           <h2>Leave your comments here!</h2>
           <textarea id="comments" rows="10" cols="60"></textarea>
-          <button>Submit</button>
+          <button>-Submit-</button>
+      
           
          
         </fieldset>
