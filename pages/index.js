@@ -1,13 +1,14 @@
+// Importe o useEffect do React
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styles from '../styles/Home.module.css';
-import { submitForm, loadFormData } from '../scripts/Home.module.js';
-
+import { loadFormData, submitForm, fetchDataFromAPI } from '../scripts/Home.module.js';
 
 const HomePage = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [formData, setFormData] = useState(loadFormData() || { name: '', email: '', comments: '' });
+  const [formData, setFormData] = useState(() => loadFormData() || { name: '', email: '', comments: '' });
   const [commentsList, setCommentsList] = useState([]);
-  
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(new Date());
@@ -16,10 +17,6 @@ const HomePage = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  useEffect(() => {
-    // Salvando os dados do formulário no localStorage sempre que houver uma mudança
-    localStorage.setItem('formData', JSON.stringify(formData));
-  }, [formData]);
 
   const formattedTime = currentTime.toLocaleString('pt-BR', {
     day: 'numeric',
@@ -32,6 +29,19 @@ const HomePage = () => {
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleFormSubmit = async () => {
+    submitForm(formData, setFormData, setCommentsList);
+
+    // Atualizar dados na API
+    try {
+      await axios.post('http://localhost:3001/api/formData', formData);
+      const updatedData = await fetchDataFromAPI();
+      setCommentsList(updatedData);
+    } catch (error) {
+      console.error('Error updating data to API:', error);
+    }
   };
 
   return (
@@ -92,7 +102,8 @@ const HomePage = () => {
             value={formData.comments}
             onChange={handleInputChange}
           ></textarea>
-          <button onClick={() => submitForm(formData, setFormData, setCommentsList)}>-Submit-</button>
+          <button onClick={(e) => { e.preventDefault(); submitForm(formData, setFormData, setCommentsList); }}>-Submit-</button>
+
         </fieldset>
         <br />
 
