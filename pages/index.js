@@ -14,6 +14,15 @@ const HomePage = () => {
       setCurrentTime(new Date());
     }, 1000);
 
+    // Carregar dados do servidor ao montar o componente
+  fetchDataFromAPI()
+  .then(data => {
+    setCommentsList(data);
+    // Salvar os dados no localStorage
+    localStorage.setItem('formData', JSON.stringify(data));
+  })
+  .catch(error => console.error('Error fetching data from API:', error));
+
     return () => clearInterval(intervalId);
   }, []);
 
@@ -39,6 +48,7 @@ const HomePage = () => {
       await axios.post('http://localhost:3001/api/formData', formData);
       const updatedData = await fetchDataFromAPI();
       setCommentsList(updatedData);
+      setFormData({ name: '', email: '', comments: '' }); // Mover aqui para garantir que a requisição foi bem-sucedida
     } catch (error) {
       console.error('Error updating data to API:', error);
     }

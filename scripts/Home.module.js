@@ -3,13 +3,14 @@ export function loadFormData() {
   try {
     if (typeof window !== 'undefined' && localStorage) {
       const savedData = localStorage.getItem('formData');
-      return savedData ? JSON.parse(savedData) : null;
+      console.log('Saved Data:', savedData);  // Adicione esta linha
+      return savedData ? JSON.parse(savedData) : { name: '', email: '', comments: '' };
     } else {
-      return null;
+      return { name: '', email: '', comments: '' };
     }
   } catch (error) {
     console.error('Error loading form data from localStorage:', error);
-    return null;
+    return { name: '', email: '', comments: '' };
   }
 }
 
