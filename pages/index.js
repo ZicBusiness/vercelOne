@@ -73,11 +73,19 @@ const HomePage = () => {
           My name is <strong>Harmonique</strong> and I'll be your host!
         </p>
         <br></br>
-        <h2>and now... Let´s Explore HTML in Next.Js!!!</h2>
+        <ul>
+        <li><h2>and now... Let´s Explore HTML in Next.Js!!!</h2>
 
         <p>
             Today is  <strong><date>03/02/204</date></strong>! And we´ve just landed here in Vercel! Now it´s Next.Js project!!
-        </p>
+        </p></li>
+        <br></br>
+        <li><h2><strong>Today is <date>18/02/2024</date>!!! Finalmente conseguimos estabilizar nosso primeiro Backend!</strong></h2>
+
+        <p>
+            Agora vamos para a próxima etapa que é subir tudo para a rede!
+        </p></li>
+        </ul>
 
         {/* ... restante do código ... */}
 
