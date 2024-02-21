@@ -16,7 +16,7 @@ export function loadFormData() {
 
 export async function fetchDataFromAPI() {
   try {
-    const response = await fetch('http://localhost:3001/api/formData');
+    const response = await fetch('https://backend-api-c0ln.onrender.com/api/formData');
     const data = await response.json();
     return data;
   } catch (error) {
@@ -39,7 +39,7 @@ export function submitForm(formData, setFormData, setCommentsList) {
     setFormData({ name: '', email: '', comments: '' });
 
     // Atualizar dados na API
-    fetch('http://localhost:3001/api/formData', {
+    fetch('https://backend-api-c0ln.onrender.com/api/formData', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

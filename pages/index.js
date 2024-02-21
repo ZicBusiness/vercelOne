@@ -45,7 +45,7 @@ const HomePage = () => {
 
     // Atualizar dados na API
     try {
-      await axios.post('http://localhost:3001/api/formData', formData);
+      await axios.post('https://backend-api-c0ln.onrender.com/api/formData', formData);
       const updatedData = await fetchDataFromAPI();
       setCommentsList(updatedData);
       setFormData({ name: '', email: '', comments: '' }); // Mover aqui para garantir que a requisição foi bem-sucedida
